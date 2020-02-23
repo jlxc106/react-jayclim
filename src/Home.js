@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
+// import logo from "./logo.svg";
 import "./App.css";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
@@ -80,11 +80,11 @@ export default function Home() {
           </h3>
           <h3
           // onClick={() => {
-          //   props.history.push("/projects");
+          //   props.history.push("/skills");
           // }}
           >
-            <Link to="/projects">
-              <i className="fas fa-code"></i> Projects & Skills
+            <Link to="/skills">
+              <i className="fas fa-code"></i> Skills
             </Link>
           </h3>
 
