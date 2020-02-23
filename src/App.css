@@ -40,9 +40,19 @@
   }
 }
 
-.particles-canvas {
+.particles-canvas-home {
   background-color: pink;
-  background: url("welcome.jpg");
+  background: url("home_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: default;
+  overflow: hidden;
+  /* position: absolute; */
+}
+
+.particles-canvas-projects {
+  background-color: pink;
+  background: url("projects_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: default;
@@ -65,10 +75,23 @@
 .container h1 {
   font-size: 72px;
   font-weight: 700;
-  font-family: "Verdana", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.container h3 {
+  width: fit-content;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+html * {
+  font-family: "Helvetica Now Display", sans-serif;
+}
+
+.inverted-color,
+.inverted-color a {
+  color: black;
+  background-color: white;
 }
