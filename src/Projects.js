@@ -75,6 +75,8 @@ export default class Projects extends Component {
             </Link>
           </div>
           <div className="skills">
+
+            
             <h2>Languages</h2>
             <ul>
               <li>
@@ -99,6 +101,8 @@ export default class Projects extends Component {
                 <h3>JAVA/Kotlin</h3>
               </li>
             </ul>
+          </div>
+
 
             {/* <h2>Web/iOS Frameworks</h2>
             <ul>
@@ -124,7 +128,6 @@ export default class Projects extends Component {
                 <h3>JAVA/Kotlin</h3>
               </li>
             </ul> */}
-          </div>
 
           {/* <div>languages</div>
           <div>Web/iOS Frameworks</div>
