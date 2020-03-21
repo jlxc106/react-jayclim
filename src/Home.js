@@ -4,11 +4,38 @@ import "./App.css";
 import Particles from "react-particles-js";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default class Home extends React.Component {
+  state = {
+    isTop: true
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', (evt) => this.handleScroll(evt), { passive: true })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', (evt) => this.handleScroll(evt))
+  }
+
+  handleScroll(event) {
+    console.log(event)
+    console.log(window.scrollY)
+    if (window.scrollY > window.innerHeight/2){
+      this.setState({isTop: false})
+    } else {
+      this.setState({isTop: true})
+    }
+    // do something like call `this.setState`
+    // access window.scrollY etc
+  }
+
+  render(){
+
+  
   return (
     <>
       <Particles
-        className="particles-canvas-home"
+        className={`${this.state.isTop ? "": "invis"} particles-canvas-home`}
         width="100vw"
         height="100vh"
         params={{
@@ -110,6 +137,19 @@ export default function Home() {
           </h3>
         </div>
       </div>
+        <div className={`${this.state.isTop ? "invis" : ""} abc`}>
+        <p>I'm Jay Lim; I'm a web/iOS software engineer, with a passion for learning and solving problems.</p>
+        </div>
+
+        <div className={`${this.state.isTop ? "invis" : ""} def`}>
+        <p>I'm Jay Lim; I'm a web/iOS software engineer, with a passion for learning and solving problems.</p>
+        </div>
+
+        <div className={`${this.state.isTop ? "invis" : ""} ghi`}>
+        <p>I'm Jay Lim; I'm a web/iOS software engineer, with a passion for learning and solving problems.</p>
+        </div>
+
     </>
   );
+      }
 }

@@ -1,20 +1,36 @@
+@font-face {
+  font-family: ApercuRegular;
+  src: url("Apercu\ Regular.otf");
+}
+
+html{
+  scroll-snap-type: y mandatory;
+  /* scroll-snap-points-y: repeat(300px); */
+  /* scroll-snap-type: y proximity; */
+}
+
 .App {
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
+
 }
+
+/* .App div {
+  scroll-snap-align: start;
+} */
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -31,14 +47,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .particles-canvas-home {
   background-color: pink;
@@ -47,6 +63,10 @@
   background-repeat: no-repeat;
   cursor: default;
   overflow: hidden;
+  transition: opacity 1s;
+  opacity: 1;
+  scroll-snap-align: start;
+
   /* position: absolute; */
 }
 
@@ -99,7 +119,8 @@ a {
 }
 
 html * {
-  font-family: "Helvetica Now Display", sans-serif;
+  font-family: ApercuRegular,"Source Sans Pro",Helvetica,Arial,sans-serif;
+  /* font-family: "Helvetica Now Display", sans-serif; */
 }
 
 .inverted-color,
@@ -111,5 +132,41 @@ html * {
 
 li {
   list-style: none;
-  
+}
+
+.abc{
+  background-color: yellow;
+  /* position: absolute; */
+  /* top: 0; */
+  transition: opacity 1s;
+  opacity: 1;
+  height: 100vh;
+  scroll-snap-align: start;
+
+}
+
+.def {
+  background-color: green;
+  height: 100vh;
+
+}
+
+.ghi {
+  background-color: indigo;
+  height: 100vh;
+}
+
+
+.invis{
+  opacity: 0;
+}
+.abc p, .def p, .ghi p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 980px) {
+  html {
+    scroll-snap-type: none;
+    /* background-color: lightblue; */
+  }
 }
