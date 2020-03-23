@@ -2,10 +2,10 @@ import React, { createRef } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
 import ParticlesComponent from "./sections/Particles";
-import SkillSection from "./sections/Skill";
-import ExperienceSection from "./sections/Experience";
+// import SkillSection from "./sections/Skill";
+// import ExperienceSection from "./sections/Experience";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -27,11 +27,17 @@ export default class Home extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("mousewheel", evt => this.handleScroll(evt));
+    window.removeEventListener("scroll", evt => this.handleScroll(evt));
   }
 
   handleScroll(event) {
-    document.querySelector(".particles-canvas-home").style.opacity = ((window.innerHeight - window.scrollY) / window.innerHeight) > 0 ? ((window.innerHeight - window.scrollY) / window.innerHeight) : 0
+    // if(window.innerHeight - window.scrollY < 0) {
+    //   document.querySelector(".particles-canvas-home").style.opacity = 0
+    // }
+    // else {
+    //   document.querySelector(".particles-canvas-home").style.opacity = 1
+    // }
+    // document.querySelector(".particles-canvas-home").style.opacity = ((window.innerHeight - window.scrollY) / window.innerHeight) > 0 ? parseFloat((window.innerHeight - window.scrollY) / window.innerHeight) : 0
   }
 
   scrollHere(ref) {
@@ -101,32 +107,15 @@ export default class Home extends React.Component {
           className={`${this.state.isTop ? "" : ""} profileSection`}
         >
           <Grid className="img-container" item xs={12} sm={3}>
-            <img className="v-center profile-img" src="jay.jpeg"></img>
-            {/* <a
-              href="/JAY_LIM_RESUME_MAR_20.pdf"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <i className="fas fa-file-alt fa-4x file-img"></i>
-            </a> */}
+            <img className="v-center profile-img" src="jay.jpeg" alt="jay"></img>
           </Grid>
 
           <Grid item xs={12} sm={9}>
-            <p className="section-font">
+            <p className="section-font" style={{marginLeft: "10px"}}>
               Hello, my name is <b>Jay Lim</b>; I'm a{" "}
               <b>web/iOS software engineer</b>, with a passion for learning and
               solving problems.
             </p>
-            {/* <span className="section-font">
-              <a
-                href="/JAY_LIM_RESUME_MAR_20.pdf"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <i className="fas fa-file-alt file-img"></i>
-              </a>
-              Resume
-            </span> */}
           </Grid>
           <i
             className="fas fa-chevron-down chevron-down-icon"
@@ -134,13 +123,6 @@ export default class Home extends React.Component {
               this.scrollHere(this.experienceRef);
             }}
           ></i>
-          {/* <img
-            className="chevron-down-icon"
-            onClick={() => {
-              this.scrollHere(2);
-            }}
-            src="chevron-down-solid.svg"
-          ></img> */}
         </Grid>
 
         <Grid
@@ -153,7 +135,90 @@ export default class Home extends React.Component {
             <h3 className="section-font">Experience</h3>
           </Grid>
           <Grid className="section-desc" item xs={12} sm={9}>
-            <div></div>
+            <div className="">
+              <h4 className="section-font-sec exp-title">
+                HaloSentient 
+              </h4>
+              <h5 className="exp-sub-title">FullStack Developer</h5>
+              <p className="exp-desc">Responsible for creating a minimum viable product for 
+              a financial technology (FinTech) application. Audited an interview based 
+              web(Angular/Node.js) & mobile(iOS & Android) application by testing client 
+              & reading source code. Developed & helped design multiple websites using 
+              Wordpress including company website. Created futuristic web app using 
+              React & Redux for a security-based project that provided latest data to the 
+              UI. Created a backend API layer using Node.JS and MongoDB that interfaces 
+              with security sensors. Utilized Socket.IO to send real-time data updates to 
+              the client.</p>
+              <ul className="exp-skills">
+                <li><span>Web</span></li>
+                <li><span>Javascript</span></li>
+                <li><span>Wordpress</span></li>
+                <li><span>React</span></li>
+                <li><span>Redux</span></li>
+                <li><span>Node.js</span></li>
+                <li><span>SQL</span></li>
+                <li><span>NoSQL</span></li>
+                <li><span>Express</span></li>
+                <li><span>MongoDB</span></li>
+                <li><span>GCP</span></li>
+                <li><span>Heroku</span></li>
+                <li><span>Socket.io</span></li>
+                <li><span>HTML</span></li>
+                <li><span>CSS</span></li>
+                <li><span>Git</span></li>
+                <li><span>Apache</span></li>
+              </ul>
+            </div>
+            <div className="">
+              <h4 className="section-font-sec exp-title">
+                SpotLite 
+              </h4>
+              <h5 className="exp-sub-title">Software Engineer</h5>
+              <p className="exp-desc">Developed backend API using Golang on the GCP platform(Firebase,
+              Storage, Spanner, Functions) to provide backend services for an iOS application. Developed an iOS app using Swift(SwiftUI framework with UIKit components) – building UIs, authentication system w/ biometric auth, video cropping & thumbnail generation, state management, CRUD operations
+              with backend & Core Data, sample data population scripts, background app refresh, etc. Responsible for synchronizing data on backend with data on the client. Continuously improved the quality of the codebase with quicker and more efficient solutions. Built the main and profile preview website from scratch using React and an API route to populate data.</p>
+              <ul className="exp-skills">
+                <li><span>iOS</span></li>
+                <li><span>Web</span></li>
+                <li><span>Golang</span></li>
+                <li><span>Swift</span></li>
+                <li><span>SwiftUI</span></li>
+                <li><span>UIKit</span></li>
+                <li><span>GCP</span></li>
+                <li><span>Firebase</span></li>
+                <li><span>SQL</span></li>
+                <li><span>Alamofire</span></li>
+                <li><span>API</span></li>
+                <li><span>Core Data</span></li>
+                <li><span>Biometric Auth</span></li>
+                <li><span>React</span></li>
+                <li><span>Javascript</span></li>
+                <li><span>HTML</span></li>
+                <li><span>CSS</span></li>
+                <li><span>Git</span></li>
+                <li><span>Apache</span></li>
+              </ul>
+            </div>
+            <div className="">
+            <h4 className="section-font-sec exp-title">
+                MaintStar 
+              </h4>
+              <h5 className="exp-sub-title">React Intern</h5>
+              <p className="exp-desc">Responsible for creating Query module using React front end. 
+              Utilized Semantic UI and Kendo UI for React to style HTML. Utilized Mobx framework 
+              with React to manage state. Pulled data from API route connected to MYSQL Server database. 
+              Component lets end users run reports using custom parameters and view pdf on the browser.</p>
+              <ul className="exp-skills">
+                <li><span>Web</span></li>
+                <li><span>React</span></li>
+                <li><span>Mobx</span></li>
+                <li><span>Semantic UI</span></li>
+                <li><span>Kendo UI</span></li>
+                <li><span>Javascript</span></li>
+                <li><span>HTML</span></li>
+                <li><span>CSS</span></li>
+              </ul>
+            </div>
             <div></div>
           </Grid>
           <i
@@ -237,9 +302,9 @@ export default class Home extends React.Component {
             <div></div> */}
           </Grid>
           <Grid className="section-footer" item xs={12}>
-            <Grid container>
+            <Grid container justify="center" alignItems="flex-end" style={{height:"100%"}}>
               <Grid item xs={3}>
-              <span>Jay Lim</span>
+              <b>Jay Lim</b>
               </Grid>
               <Grid item xs={9}>
               <a
