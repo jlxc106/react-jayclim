@@ -6,7 +6,7 @@ const ParticlesComponent = React.forwardRef((props, ref) => {
     <Particles
       ref={ref}
     //   {...props}
-      className={`${props.isTop ? "" : "invis "}particles-canvas-home`}
+      canvasClassName="particles-canvas-home"
       width="100vw"
       height="100vh"
       params={{

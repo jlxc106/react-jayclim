@@ -21,6 +21,12 @@ html {
   color: white;
 }
 
+ul {
+  /* margin: 0; */
+  padding-left: 0;
+}
+
+
 .App {
   text-align: center;
   overflow-x: hidden;
@@ -44,14 +50,11 @@ html {
 }
 
 .particles-canvas-home {
-  background-color: pink;
   background: url("home_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: default;
   overflow: hidden;
-  transition: opacity 1s;
-  opacity: 1;
   scroll-snap-align: start;
   max-height: 100vh;
   /* position: absolute; */
@@ -101,8 +104,12 @@ html {
 }
 
 a {
-  color: white;
+  color: rgb(230, 230, 230);
   text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }
 
 html * {
@@ -118,6 +125,8 @@ html * {
 
 li {
   list-style: none;
+  line-height: 1.4;
+  font-size: 1rem;
 }
 
 .color-white {
@@ -129,25 +138,29 @@ li {
 }
 
 .profileSection {
-  position: relative;
   transition: opacity 1s;
   opacity: 1;
-  height: 100vh;
 }
 
 .experienceSection {
-  position: relative;
-
   background-color: green;
-  min-height: 100vh;
 }
 
 .skillSection {
-  position: relative;
-  fill: currentColor;
-  background-color: pink;
-  height: 100vh;
+  /* background-color: pink; */
+  /* padding-left: 30px;
+  padding-right: 30px; */
 }
+
+
+.skillSection, .experienceSection, .profileSection {
+  position: relative;
+  height: fit-content;
+  min-height: 100vh;
+  fill: currentColor;
+  padding: 50px 30px;
+}
+
 
 .invis,
 .invis * {
@@ -167,7 +180,7 @@ li {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 /* Track */
@@ -188,8 +201,19 @@ li {
 h3.section-font,
 p.section-font,
 span.section-font {
-  padding-right: 30px;
-  padding-left: 30px;
+  /* padding-right: 30px;
+  padding-left: 30px; */
+}
+
+.section-footer{
+  font-size: 1.2rem;
+  /* padding-right: 30px;
+  padding-left: 30px; */
+}
+
+.section-footer a{
+  /* padding-left: 10px; */
+  padding-right: 20px;
 }
 
 .section-font {
@@ -203,7 +227,7 @@ span.section-font {
 
 .section-font-sec{
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 p.v-center,
@@ -218,15 +242,21 @@ span.v-center {
   display: block;
 }
 
-/* .file-img {
-  color: #0a4a6d;
-  margin: 20px auto;
-} */
+.section-title{
+  /* padding-top: 50px; */
+}
 
-/* .v-center {
-  position: relative;
-  top: 50%;
-} */
+.section-title > h3{
+  margin: 0px;
+}
+
+h3.section-font-sec {
+  margin-top: 0px;
+}
+
+.section-desc{
+  /* padding-top: 30px; */
+}
 
 .chevron-down-icon {
   top: 90%;
@@ -251,20 +281,17 @@ span.v-center {
 
 @keyframes pulse {
   0% {
-    color: white;
-    /* color: black; */
+    color: grey;
     transform: scale(0.8);
   }
 
   50% {
-    color: grey;
-    /* color: grey; */
+    color: white;
     transform: scale(1);
   }
 
   100% {
-    color: white;
-    /* color: black; */
+    color: grey;
     transform: scale(0.8);
   }
 }
@@ -285,9 +312,19 @@ span.v-center {
     font-size: 1.5rem;
   } */
 
+
+
   .section-font {
     font-size: 1.5rem;
   }
+
+  .section-font-sec {
+    font-size: 1.0rem;
+
+  }
+
+
+  
 
   /* .profileSection {
     height: fit-content;
@@ -300,5 +337,36 @@ span.v-center {
     margin-bottom: 20px;
     /* top: 50%;
     vertical-align: middle; */
+  }
+}
+
+/* phone landscape */
+@media (max-width: 900px){
+  /* .section-desc{
+    padding: 50px 0 30px;
+  } */
+  li {
+    font-size: 0.9rem;
+  }
+  .section-footer{
+    font-size: 1rem;
+    padding-bottom: 50px;
+  }
+}
+
+
+/* phone portrait */
+@media (max-width: 600px){
+  /* .section-desc{
+    padding: 0 30px;
+  } */
+
+  li {
+    font-size: 0.9rem;
+  }
+
+  .section-footer{
+    font-size: 1rem;
+    padding-bottom: 50px;
   }
 }

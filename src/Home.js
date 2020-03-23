@@ -21,15 +21,6 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-    // window.addEventListener(
-    //   "mousewheel",
-    //   evt => {
-    //     // evt.preventDefault();
-    //     this.handleScroll(evt);
-    //   },
-    //   { passive: true }
-    // );
-
     window.addEventListener("scroll", evt => this.handleScroll(evt), {
       passive: true
     });
@@ -40,55 +31,7 @@ export default class Home extends React.Component {
   }
 
   handleScroll(event) {
-    // console.log(event)
-    // console.log(this.state.last_y)
-    // console.log(window.scrollY)
-
-    // let newY;
-    // let isTop = false;
-    // console.log((window.innerHeight - window.scrollY) / window.innerHeight);
-    // console.log(this.canvasRef);
-    // if (this.canvasRef.current) {
-    // this.canvasRef.current.style.opacity =
-    // (window.innerHeight - window.scrollY) / window.innerHeight;
-    // }
-    if (window.scrollY > window.innerHeight / 2) {
-      // isTop = false;
-      this.setState({ isTop: false });
-    } else {
-      // isTop = true;
-      this.setState({ isTop: true });
-    }
-
-    // if (this.state.last_y > window.scrollY) {
-    //   console.log("going up");
-    //   newY =
-    //     this.state.last_y - window.innerHeight > 0
-    //       ? this.state.last_y - window.innerHeight
-    //       : 0;
-    // } else if (this.state.last_y < window.scrollY) {
-    //   console.log("going down");
-    //   newY = this.state.last_y + window.innerHeight;
-    // }
-
-    // console.log(newY);
-    // this.setState(
-    //   { isTop }
-    //   // () =>
-    //   //   setTimeout(function() {
-    //   //     window.scrollTo(0, newY);
-    //   //     console.log("at ", window.scrollY, " scroll to", newY);
-    //   //   }, 100)
-    //   // window.scrollTo(0, newY)
-    // );
-
-    // if (window.scrollY > window.innerHeight/2){
-    //   this.setState({isTop: false})
-    // } else {
-    //   this.setState({isTop: true})
-    // }
-    // do something like call `this.setState`
-    // access window.scrollY etc
+    document.querySelector(".particles-canvas-home").style.opacity = ((window.innerHeight - window.scrollY) / window.innerHeight) > 0 ? ((window.innerHeight - window.scrollY) / window.innerHeight) : 0
   }
 
   scrollHere(ref) {
@@ -99,19 +42,12 @@ export default class Home extends React.Component {
     }
   }
 
-  fadeInOut(ref) {
-    ref.current.style.opacity = 0;
-  }
-
   render() {
+
     return (
       <>
         <ParticlesComponent
           ref={this.canvasRef}
-          // forwardRef={this.canvasRef}
-          isTop={this.state.isTop}
-          // canvasRef={this.canvasRef}
-          fadeInOut={this.fadeInOut}
         />
         <div className="main-text-container">
           <h1>Jay Lim</h1>
@@ -162,9 +98,9 @@ export default class Home extends React.Component {
           justify="center"
           alignItems="center"
           ref={this.profileRef}
-          className={`${this.state.isTop ? "invis" : ""} profileSection`}
+          className={`${this.state.isTop ? "" : ""} profileSection`}
         >
-          <Grid className="img-container" item xs={12} sm={4}>
+          <Grid className="img-container" item xs={12} sm={3}>
             <img className="v-center profile-img" src="jay.jpeg"></img>
             {/* <a
               href="/JAY_LIM_RESUME_MAR_20.pdf"
@@ -175,7 +111,7 @@ export default class Home extends React.Component {
             </a> */}
           </Grid>
 
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={9}>
             <p className="section-font">
               Hello, my name is <b>Jay Lim</b>; I'm a{" "}
               <b>web/iOS software engineer</b>, with a passion for learning and
@@ -211,12 +147,12 @@ export default class Home extends React.Component {
           container
           ref={this.experienceRef}
           justify="center"
-          className={`${this.state.isTop ? "invis" : ""} experienceSection`}
+          className={`${this.state.isTop ? "" : ""} experienceSection`}
         >
-          <Grid className="section-font" item xs={12} sm={4}>
+          <Grid className="section-title" item xs={12} sm={3}>
             <h3 className="section-font">Experience</h3>
           </Grid>
-          <Grid className="section-font" item xs={12} sm={8}>
+          <Grid className="section-desc" item xs={12} sm={9}>
             <div></div>
             <div></div>
           </Grid>
@@ -231,35 +167,107 @@ export default class Home extends React.Component {
           container
           ref={this.skillRef}
           justify="center"
-          className={`${this.state.isTop ? "invis" : ""} skillSection section-font-sec`}
+          className={`${this.state.isTop ? "" : ""} skillSection section-font-sec`}
         >
-          <Grid className="" item xs={12} sm={4}>
+          <Grid className="section-title" item xs={12} sm={3}>
             <h3 className="section-font">Skills</h3>
           </Grid>
-          <Grid className="" item xs={12} sm={8}>
+          <Grid className="section-desc" item xs={12} sm={9}>
             <Grid container>
-              <Grid item xs={3}>
+              <Grid item xs={6} sm={3}>
                 <h3 className="section-font-sec">Languages</h3>
-
+                <ul>
+                  <li>Javascript</li>
+                  <li>Python</li>
+                  <li>JAVA</li>
+                  <li>Swift</li>
+                  <li>Golang</li>
+                  <li>SQL</li>
+                  <li>NoSQL</li>
+                  <li>PHP</li>
+                  <li>Matlab</li>
+                  
+                </ul>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={6} sm={3}>
                 <h3 className="section-font-sec">Frameworks</h3>
+                <ul>
+                  <li>React</li>
+                  <li>Redux</li>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                  <li>jQuery</li>
+                  <li>Wordpress</li>
+                  <li>SwiftUI</li>
+                  <li>UIKit</li>
+                </ul>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={6} sm={3}>
                 <h3 className="section-font-sec">Services</h3>
+                <ul>
+                  <li>AWS</li>
+                  <li>GCP</li>
+                  <li>Firebase</li>
+                  <li>Wordpress</li>
+                  <li>Heroku</li>
+                  <li>DigitalOcean</li>
+                </ul>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={6} sm={3}>
                 <h3 className="section-font-sec">General</h3>
+                <ul>
+                  <li>Git</li>
+                  <li>Docker</li>
+                  <li>HTML/CSS</li>
+                  <li>Matlab</li>
+                  <li>Linux</li>
+                  <li>Bash</li>
+                  <li>Apache</li>
+                  <li>NGINX</li>
+                  <li>MongoDB</li>
+                  <li>MYSQL</li>
+                  <li>Socket.io</li>
+                  <li>GIMP</li>
+                  <li>XCode</li>
+                </ul>
               </Grid>
             </Grid>
 
-            <div className="section-font"></div>
-            <div></div>
+            {/* <div className="section-font"></div>
+            <div></div> */}
+          </Grid>
+          <Grid className="section-footer" item xs={12}>
+            <Grid container>
+              <Grid item xs={3}>
+              <span>Jay Lim</span>
+              </Grid>
+              <Grid item xs={9}>
+              <a
+                href="/JAY_LIM_RESUME_MAR_20.pdf"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span>Resume</span>
+                {/* <i className="fab fa-github-alt"></i> Github */}
+              </a>
+              {/* <span>Resume</span> */}
+              {" "}
+              <a
+                href="https://www.github.com/jlxc106"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span>Github</span>
+                {/* <i className="fab fa-github-alt"></i> Github */}
+              </a>
+              {/* <span>Github</span> */}
+              </Grid>
+            </Grid>
           </Grid>
           <i
-            className="fas fa-chevron-down chevron-down-icon"
+            className="fas fa-angle-double-up chevron-down-icon"
             onClick={() => {
-              this.scrollHere(this.skillRef);
+              this.scrollHere();
             }}
           ></i>
           {/* <Grid className="" item xs={12} sm={4}>
@@ -288,5 +296,6 @@ export default class Home extends React.Component {
         </Grid>
       </>
     );
+
   }
 }
