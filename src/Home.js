@@ -415,7 +415,7 @@ export default class Home extends React.Component {
               </Grid>
               <Grid item xs={9}>
                 <a
-                  href="/JAY_LIM_RESUME_MAR_20.pdf"
+                  href="/Jay_Lim_Resume.pdf"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
