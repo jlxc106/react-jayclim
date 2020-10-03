@@ -20,26 +20,6 @@ export default class Home extends React.Component {
     this.skillRef = createRef();
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", evt => this.handleScroll(evt), {
-      passive: true
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", evt => this.handleScroll(evt));
-  }
-
-  handleScroll(event) {
-    // if(window.innerHeight - window.scrollY < 0) {
-    //   document.querySelector(".particles-canvas-home").style.opacity = 0
-    // }
-    // else {
-    //   document.querySelector(".particles-canvas-home").style.opacity = 1
-    // }
-    // document.querySelector(".particles-canvas-home").style.opacity = ((window.innerHeight - window.scrollY) / window.innerHeight) > 0 ? parseFloat((window.innerHeight - window.scrollY) / window.innerHeight) : 0
-  }
-
   scrollHere(ref) {
     if (!ref) {
       window.scrollTo(0, 0);
@@ -55,7 +35,7 @@ export default class Home extends React.Component {
         <div className="main-text-container">
           <h1>Jay Lim</h1>
           <div>
-            <h3>
+            <h3 className="">
               <i className="fas fa-briefcase"></i> Web/iOS Software Engineer
             </h3>
             <h3>
@@ -63,6 +43,7 @@ export default class Home extends React.Component {
                 href="https://www.github.com/jlxc106"
                 rel="noopener noreferrer"
                 target="_blank"
+                className="link-github"
               >
                 <i className="fab fa-github-alt"></i> Github
               </a>
@@ -72,6 +53,7 @@ export default class Home extends React.Component {
                 href="https://www.linkedin.com/in/jayl1m/"
                 rel="noopener noreferrer"
                 target="_blank"
+                className="link-linkedin"
               >
                 <i className="fab fa-linkedin-in"></i> LinkedIn
               </a>
@@ -83,13 +65,6 @@ export default class Home extends React.Component {
             </h3>
           </div>
         </div>
-        {/* <img
-          className="chevron-down-icon"
-          onClick={() => {
-            this.scrollHere(1);
-          }}
-          src="chevron-down-solid.svg"
-        ></img> */}
         <i
           className="fas fa-chevron-down chevron-down-icon color-white"
           onClick={() => {
@@ -140,16 +115,7 @@ export default class Home extends React.Component {
               <h4 className="section-font-sec exp-title">HaloSentient</h4>
               <h5 className="exp-sub-title">FullStack Developer</h5>
               <p className="exp-desc">
-                Responsible for creating a minimum viable product for a
-                financial technology (FinTech) application. Audited an interview
-                based web(Angular/Node.js) & mobile(iOS & Android) application
-                by testing client & reading source code. Developed & helped
-                design multiple websites using Wordpress including company
-                website. Created futuristic web app using React & Redux for a
-                security-based project that provided latest data to the UI.
-                Created a backend API layer using Node.JS and MongoDB that
-                interfaces with security sensors. Utilized Socket.IO to send
-                real-time data updates to the client.
+              Implemented mobile friendly ecommerce marketplace website using React/Redux with hooks, Node.js, Typescript, Firebase, and Stripe as the payment processor. Designed and developed security-based web application using React/Redux, MongoDB, Node.js and Socket.io for real-time UI updates. Audited (QA) for interview-based web (Angular/Node.js) & mobile (Swift & JAVA) application by testing client & reading source code. Identified and reported multiple exploit avenues in web application. Leveraged knowledge in Git, GCP, Fullstack web development, Javascript using ES6+
               </p>
               <ul className="exp-skills">
                 <li>
@@ -418,6 +384,7 @@ export default class Home extends React.Component {
                   href="/Jay_Lim_Resume.pdf"
                   rel="noopener noreferrer"
                   target="_blank"
+                  className="link-resume"
                 >
                   <span>Resume</span>
                   {/* <i className="fab fa-github-alt"></i> Github */}
@@ -427,6 +394,7 @@ export default class Home extends React.Component {
                   href="https://www.github.com/jlxc106"
                   rel="noopener noreferrer"
                   target="_blank"
+                  className="link-github"
                 >
                   <span>Github</span>
                   {/* <i className="fab fa-github-alt"></i> Github */}
@@ -441,29 +409,6 @@ export default class Home extends React.Component {
               this.scrollHere();
             }}
           ></i>
-          {/* <Grid className="" item xs={12} sm={4}>
-            <img className="v-center profile-img" src="jay.jpeg"></img>
-          </Grid>
-
-          <Grid item xs={12} sm={8}>
-            <p className="section-font">
-              I'm Jay Lim; I'm a web/iOS software engineer, with a passion for
-              learning and solving problems.
-            </p>
-          </Grid>
-          <i
-            className="fas fa-chevron-down chevron-down-icon"
-            onClick={() => {
-              this.scrollHere(this.skillRef);
-            }}
-          ></i> */}
-          {/* <img
-            className="chevron-down-icon"
-            onClick={() => {
-              this.scrollHere(3);
-            }}
-            src="chevron-down-solid.svg"
-          ></img> */}
         </Grid>
       </>
     );
