@@ -20,13 +20,13 @@ afterAll(() => {
 describe('Headless Browser Tests', () => {
   test('Particle JS Canvas Background Loads Properly', async () => {
     let page = await browser.newPage();
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
 
     await page.goto(`${baseUrl}`);
     await page.waitForSelector("canvas.particles-canvas-home")
@@ -41,13 +41,13 @@ describe('Headless Browser Tests', () => {
   test('main h1 loads correctly', async () => {
     let page = await browser.newPage();
 
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
 
     await page.goto(`${baseUrl}`);
     await page.waitForSelector(".main-text-container")
@@ -60,13 +60,13 @@ describe('Headless Browser Tests', () => {
   test('Footer Resume URL works correctly', async () => {
     let page = await browser.newPage();
 
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
 
     await page.goto(`${baseUrl}`);
     await page.waitForSelector(".section-footer .link-resume")
@@ -78,13 +78,13 @@ describe('Headless Browser Tests', () => {
 
   test('Footer Github URL works correctly', async () => {
     let page = await browser.newPage();
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
     await page.goto(`${baseUrl}`);
     await page.waitForSelector(".section-footer .link-github")
     const resumeURL = await page.$eval(".section-footer .link-github", e => e.href)
@@ -93,13 +93,13 @@ describe('Headless Browser Tests', () => {
 
   test('Header LinkedIn URL works correctly', async () => {
     let page = await browser.newPage();
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
     await page.goto(`${baseUrl}`);
     await page.waitForSelector(".main-text-container .link-linkedin")
     const resumeURL = await page.$eval(".main-text-container .link-linkedin", e => e.href)
@@ -109,13 +109,13 @@ describe('Headless Browser Tests', () => {
 
   test('Header Github URL works correctly', async () => {
     let page = await browser.newPage();
-    page.emulate({
-      viewport: {
-        width: 1000,
-        height: 2000
-      },
-      userAgent: ''
-    });
+    // page.emulate({
+    //   viewport: {
+    //     width: 1000,
+    //     height: 2000
+    //   },
+    //   userAgent: ''
+    // });
     await page.goto(`${baseUrl}`);
     await page.waitForSelector(".main-text-container .link-github")
     const resumeURL = await page.$eval(".main-text-container .link-github", e => e.href)
