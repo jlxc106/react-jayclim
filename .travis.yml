@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - "11"
-dist: trusty
+  - 11
+dist: xenial
+services:
+    - xvfb
 sudo: required
 addons:
-  chrome: stable
   hostname: localhost
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 before_script:
   - npm run start &
+  - sleep 15
 cache:
   npm: true
   directories:
@@ -17,4 +17,4 @@ cache:
 install:
   - npm install
 script:
-  - npm run test:ci
+  - npm run test
