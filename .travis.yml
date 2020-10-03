@@ -1,20 +1,20 @@
 language: node_js
 node_js:
-    - 11
+  - "9"
 dist: trusty
-sudo: false  
+sudo: required
 addons:
-    chrome: stable
+  chrome: stable
+  hostname: localhost
 before_install:
-    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+before_script:
+  - yarn start &
 cache:
-    yarn: true
-    directories:
+  yarn: true
+  directories:
     - node_modules
 install:
-    - yarn install
-before_script:
-    - yarn start &
-    - sleep 30
+  - yarn install
 script:
-    - yarn test
+  - yarn test
