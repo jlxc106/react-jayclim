@@ -15,4 +15,5 @@ install:
     - yarn install
 script:
     - yarn start &
+    - sleep 5
     - yarn test
