@@ -13,7 +13,8 @@ cache:
     - node_modules
 install:
     - yarn install
-script:
+before_script:
     - yarn start &
-    - sleep 5
+    - sleep 30
+script:
     - yarn test
