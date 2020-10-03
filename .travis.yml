@@ -9,8 +9,11 @@ addons:
   hostname: localhost
 before_script:
   - npm run start &
-  - sleep 15
+cache:
+  npm: true
+  directories:
+    - node_modules
 install:
   - npm install
 script:
-  - npm run test
+  - npm run test:ci
