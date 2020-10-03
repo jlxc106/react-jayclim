@@ -7,8 +7,6 @@ services:
 sudo: required
 addons:
   hostname: localhost
-before_script:
-  - npm run start &
 cache:
   npm: true
   directories:
@@ -16,4 +14,4 @@ cache:
 install:
   - npm install
 script:
-  - npm run test:ci
+  - npm run test
