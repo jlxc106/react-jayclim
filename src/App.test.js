@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 
 let browser
 
-baseUrl = `http://localhost:3000/`
+const baseUrl = `http://localhost:3000/`
 
 beforeAll(async () => {
   // console.log("open")
