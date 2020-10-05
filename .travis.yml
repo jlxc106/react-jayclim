@@ -16,7 +16,6 @@ before_install:
 - chmod 600 ./deploy_key
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
-- ssh -i ./deploy_key root@159.203.99.76 pwd
 install:
 - npm install
 script:
@@ -26,9 +25,3 @@ deploy:
   script: bash ./deploy.sh
   on:
     branch: master
-after_success:
-- cd /var/www/react-jayclim
-- git pull origin master
-- npm run build
-- service apache2 restart
-
