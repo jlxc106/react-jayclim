@@ -9,6 +9,9 @@ ssh -i ./deploy_key -t -t root@159.203.99.76 << EOF
     cd /var/www/react-jayclim
     pwd
     git pull origin master
+    npm install
     npm run build
     service apache2 restart
+    exit 0
 EOF
+exit 0
