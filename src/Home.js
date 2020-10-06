@@ -1,11 +1,8 @@
 import React, { createRef } from "react";
-// import logo from "./logo.svg";
 import "./App.css";
 import ParticlesComponent from "./sections/Particles";
-// import SkillSection from "./sections/Skill";
-// import ExperienceSection from "./sections/Experience";
+
 import Grid from "@material-ui/core/Grid";
-// import { Link } from "react-router-dom";
 
 export default class Home extends React.Component {
   constructor(props) {
