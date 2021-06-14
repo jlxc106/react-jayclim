@@ -1,8 +1,8 @@
 import React, { createRef } from "react";
+import Grid from "@material-ui/core/Grid";
+
 import "./App.css";
 import ParticlesComponent from "./sections/Particles";
-
-import Grid from "@material-ui/core/Grid";
 
 export default class Home extends React.Component {
   constructor(props) {
