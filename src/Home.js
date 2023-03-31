@@ -33,7 +33,7 @@ export default class Home extends React.Component {
           <h1>Jay Lim</h1>
           <div>
             <h3 className="">
-              <i className="fas fa-briefcase"></i> Web/iOS Software Engineer
+              <i className="fas fa-briefcase"></i> Software Engineer
             </h3>
             <h3>
               <a
@@ -85,9 +85,18 @@ export default class Home extends React.Component {
 
           <Grid item xs={12} sm={9}>
             <p className="section-font" style={{ marginLeft: "10px" }}>
-              Hello, my name is <b>Jay Lim</b>; I'm a{" "}
-              <b>web/iOS software engineer</b>, with a passion for learning and
-              solving problems.
+              Hello, my name is <b>Jay Lim</b>; I'm a "Jack of All Trades" {" "}
+              <b>software engineer</b> with a strong aptitude for 
+              solving difficult problems.
+            </p>
+            <p className="section-font" style={{ marginLeft: "10px" }}>
+              In my free time, I like to cook and eat good food.
+            </p>
+            <p className="section-font" style={{ marginLeft: "10px" }}>
+              I'm also a runner which supports my eating habits. I will be running 5K's & 10K's in 2023.
+            </p>
+            <p className="section-font" style={{ marginLeft: "10px" }}>
+              I like to read books about programming and self-help books.
             </p>
           </Grid>
           <i
@@ -108,6 +117,12 @@ export default class Home extends React.Component {
             <h3 className="section-font">Experience</h3>
           </Grid>
           <Grid className="section-desc" item xs={12} sm={9}>
+          <div className="">
+              <h4 className="section-font-sec exp-title">Signifyd</h4>
+              <h5 className="exp-sub-title">Application Software Engineer</h5>
+              <ul className="exp-skills">
+              </ul>
+            </div>
             <div className="">
               <h4 className="section-font-sec exp-title">HaloSentient</h4>
               <h5 className="exp-sub-title">FullStack Developer</h5>
@@ -304,7 +319,14 @@ export default class Home extends React.Component {
             <h3 className="section-font">Skills</h3>
           </Grid>
           <Grid className="section-desc" item xs={12} sm={9}>
+          
             <Grid container>
+              <Grid item xs={12} sm={12}>
+              <p>
+            I believe software engineers should have the ability to learn new skills. Therefore, these are some of the skills I've used recently, not an exhaustive list of skills i'm capable of learning.
+          </p>
+          <br></br>
+              </Grid>
               <Grid item xs={6} sm={3}>
                 <h3 className="section-font-sec">Languages</h3>
                 <ul>
