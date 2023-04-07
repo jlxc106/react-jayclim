@@ -1,4 +1,4 @@
-name: Upload to S3
+name: Upload to S3 and Invalidate Cache
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - 'github-actions'
 
 jobs:
-  upload:
+  build-upload-and-invalidate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -15,11 +15,21 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14.x'
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: 'build'
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.CLOUDFRONT_DISTRIBUTION }}
+          PATHS: "/index.html"
+          AWS_REGION: "us-east-1"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
