@@ -7,7 +7,7 @@ export default class ExperienceSection extends React.Component {
     return (
       <>
         <Grid className="" item xs={12} sm={4}>
-          <img className="v-center profile-img" src="jay.jpeg"></img>
+          <img className="v-center profile-img" src="jay.jpg"></img>
         </Grid>
 
         <Grid item xs={12} sm={8}>

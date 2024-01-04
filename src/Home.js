@@ -78,7 +78,7 @@ export default class Home extends React.Component {
           <Grid className="img-container" item xs={12} sm={3}>
             <img
               className="v-center profile-img"
-              src="jay.jpeg"
+              src="jay.jpg"
               alt="jay"
             ></img>
           </Grid>
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
               In my free time, I like to cook and eat good food.
             </p>
             <p className="section-font" style={{ marginLeft: "10px" }}>
-              I'm also a runner which supports my eating habits. I will be running 5K's & 10K's in 2023.
+              I'm also a runner which supports my eating habits. I will be running 5K's & 10K's in 2024.
             </p>
             <p className="section-font" style={{ marginLeft: "10px" }}>
               I like to read books about programming and self-help books.
